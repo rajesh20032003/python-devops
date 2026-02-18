@@ -37,7 +37,7 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: download build artifacts
+      - name: download build artifactss
         uses: actions/download-artifact@v4
         with:
           name: simple-http-${{github.sha}}
