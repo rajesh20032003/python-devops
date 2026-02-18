@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.1 (2026-02-18)
+
+### Bug Fixes
+
+- Fixed
+  ([`4021869`](https://github.com/rajesh20032003/python-devops/commit/40218699f216f50d9736abb5a8b3bc216f13df9c))
+
+
 ## v1.2.0 (2026-02-18)
 
 ### Features
