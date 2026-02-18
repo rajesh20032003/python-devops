@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-02-18)
+
+### Features
+
+- Final
+  ([`87a7012`](https://github.com/rajesh20032003/python-devops/commit/87a70121e0e1cc6c1984d0907ab87ea481ce11a4))
+
+
 ## v1.1.0 (2026-02-18)
 
 ### Features
