@@ -42,3 +42,36 @@ exclude_dirs = [".venv", "__pycache__", "build", "dist"]
 
 [tool.pytest.ini_options]
 addopts = "-rA -S -v"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+build_command = "pip install build && python -m build"
+dist_path = "dist/"
+upload_to_pypi = false
+upload_to_release = true
+hvcs = "github"
+commit_message = "chore(release): {version} {skip ci}"
+[tool.semantic_release.branches.main]
+match= "main"
+prerelease = false
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+  "build",
+  "chore",
+  "ci",
+  "docs",
+  "feat",
+  "fix",
+  "perf",
+  "style",
+  "refactor"
+]
+
+minor_tags = ["feat"]
+patch_tags = ["fix"]
+
+
+
+
+
