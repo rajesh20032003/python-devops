@@ -43,6 +43,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
+          ref: main
 
       - name: set up python---
         uses: actions/setup-python@v5
