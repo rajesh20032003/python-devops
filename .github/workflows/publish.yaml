@@ -48,3 +48,20 @@ jobs:
           repository-url: https://test.pypi.org/legacy/
           skip-existing: true
           verbose: true
+  publish-pypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: ENVIRONMENT
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: download build artifactss
+        uses: actions/download-artifact@v4
+        with:
+          name: simple-http-${{github.sha}}
+          path: dist/
+      - name: publish to testPYPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          verbose: true
