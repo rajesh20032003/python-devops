@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.0 (2026-02-18)
+
+### Features
+
+- Added prod workflow
+  ([`c471c7b`](https://github.com/rajesh20032003/python-devops/commit/c471c7b5ef9411051ac5ee5b8784a4ad2ad528db))
+
+
 ## v1.2.2 (2026-02-18)
 
 ### Bug Fixes
