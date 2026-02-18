@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.1 (2026-02-18)
+
+### Bug Fixes
+
+- Added r
+  ([`df9a556`](https://github.com/rajesh20032003/python-devops/commit/df9a5561d81aef92c00aea7c0d0c822d97464818))
+
+
 ## v1.3.0 (2026-02-18)
 
 ### Features
