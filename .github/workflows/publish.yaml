@@ -51,7 +51,7 @@ jobs:
   publish-pypi:
     needs: build
     runs-on: ubuntu-latest
-    environment: DEVELOPMENT
+    environment: PRODUCTION
     permissions:
       id-token: write
       contents: read
