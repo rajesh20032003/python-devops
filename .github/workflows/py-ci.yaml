@@ -27,7 +27,7 @@ jobs:
       - name: checking mypy src
         run: |
          mypy src/
-      - name: checking bandit
+      - name: checking bandits
         run: |
          bandit -c pyproject.toml -r .
   release:
