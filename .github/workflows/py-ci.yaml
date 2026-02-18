@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
 
       - name: set up python
         uses: actions/setup-python@v5
@@ -53,7 +53,7 @@ jobs:
          pip install python-semantic-release
       - name: create relase
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
          semantic-release version
          semantic-release publish

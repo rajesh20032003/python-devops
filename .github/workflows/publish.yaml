@@ -1,0 +1,49 @@
+name: publish to pypi
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+     runs-on: ubuntu-latest
+     steps:
+        - name: checkout repo
+          uses: actions/checkout@v4
+        - name: set up python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.12'
+        - name: display python version and location
+          run: |
+           python --version
+           which python
+        - name: install dependencies
+          run: |
+           pip install build
+        - name: build package
+          run: |
+           python -m build
+        - name: upload build aritifacts
+          uses: actions/upload-artifact@v4
+          with:
+            name: simple-http-${{github.sha}}
+            path: dist/
+  publish-testpypi:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: simple-http-${{github.sha}}
+          path: dist/
+      - name: publish to testPYPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy
+          skip-existing: true
+          verbose: true
