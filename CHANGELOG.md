@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.2 (2026-02-18)
+
+### Bug Fixes
+
+- Dev -> prod
+  ([`16133c9`](https://github.com/rajesh20032003/python-devops/commit/16133c94ff1f40454ac0f650e3f0238af215afea))
+
+
 ## v1.3.1 (2026-02-18)
 
 ### Bug Fixes
