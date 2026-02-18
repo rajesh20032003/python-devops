@@ -30,6 +30,27 @@ jobs:
       - name: checking bandit
         run: |
          bandit -c pyproject.toml -r .
-
+  build-and-upload:
+    runs-on: ubuntu-latest
+    needs: 
+      - build-and-test
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v5
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install dep
+        run: |
+         pip install build
+      - name: building the code
+        run: |
+         python -m build 
+      - name: upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: simple-http-checker-${{ github.sha }}
+          path: dist/
 
   
