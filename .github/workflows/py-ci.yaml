@@ -24,6 +24,12 @@ jobs:
       - name: checking ruff
         run: |
          ruff check . 
+      - name: checking mypy src
+        run: |
+         mypy /src
+      - name: checking bandit
+        run: |
+         bandit -c pyproject.toml -r .
 
 
   
